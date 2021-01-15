@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/libs/bootstrap-5.0.0-beta1-dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        .rounded-circle {
+            width: 16px !important;
+            display: block;
+            box-sizing: border-box;
+            padding: 0;
+            height: 16px !important;
+        }
+
+        .side-bar .badge {
+            position: absolute !important;
+            top: 1px !important;
+            border-radius: 10px !important;
+            left: 35px !important;
+        }
+
+        .side-bar .fas,
+        .far {
+            font-size: 27px !important
+        }
+
+        .side-bar .btn {
+            padding: 10px;
+        }
+
+        .active-content {
+            background-color: #202020 !important;
+        }
+
+        .active-btn {
+            color: white !important;
+            font-size: 700 !important;
+            border-bottom: 3px solid white !important;
+        }
+
+        .list-group .list-group-item {
+            background-color: #404040;
+            color: #E2E2E2;
+            border: 0 !important;
+        }
+
+        .list-group {
+            height: 89vh;
+            overflow-y: scroll;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .list-group .list-group-item .user-name {
+            font-size: 14px;
+            margin: 0;
+            width: 85px;
+        }
+
+        .list-group .list-group-item .last-message {
+            font-size: 12px;
+        }
+
+        .list-group .list-group-item .badge {
+            position: absolute;
+            right: 2px;
+            top: 33px;
+
+        }
+
+        .list-group .list-group-item .badge {
+            background-color: #7B787B !important;
+            color: #E2E2E2;
+        }
+
+        .main-section {
+            background: url(./assets/image/macOS-Big-Sur-Daylight-5.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .emoji-content a {
+            text-decoration: none;
+            font-size: 18px;
+            margin: 8px;
+            display: inline-block;
+        }
+
+
+        .emoji-content .emoji img {
+            width: 40px;
+        }
+
+        .emoji-nav .far {
+            color: #BABDC6;
+            padding: 10px;
+            font-size: 22px !important;
+
+        }
+
+        .emoji-nav .far.active {
+            color: #5741EF;
+        }
+
+        .emoji-nav .btn {
+            padding: 10px;
+        }
+
+        .form-control::placeholder {
+            color: #B1B3BC;
+            font-size: 14px;
+        }
+
+        .form-control {
+            font-size: 14px;
+            color: #B1B3BC;
+        }
+
+        .list-img {
+            object-fit: cover;
+        }
+
+        .date-status {
+            font-size: 12px;
+            position: absolute;
+            top: 10px;
+            right: 8px;
+        }
+    </style>
+</head>
+
+<body style="font-family: sans-serif; overflow: hidden;">
+    <!-- beginning of header -->
+    <header class="header py-2 " style="background-color: #3A3A3A; width: 100vw;">
+        <div class="row g-0">
+            <div class="col-7  offset-5 d-flex justify-content-between align-items-center">
+                <p style="width: 25%;text-align: center;margin: 0;" class="text-white">Telegram</p>
+                <div class="btn-group px-3 " role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-warning rounded-circle"></button>
+                    <button type="button" class="btn mx-2 btn-success rounded-circle"></button>
+                    <button type="button" class="btn btn-danger rounded-circle"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end of header -->
+
+    <!-- beginning of main -->
+    <main class="main">
+        <div class="row">
+            <div class="col-2" style="background-color: #404040;">
+                <div class="row pt-3" style="height: 100vh;">
+                    <div class="col-3 text-center side-bar">
+                        <button class="btn p-0 mb-3">
+                            <i class="fas fa-bars " style="font-size: 20px; color: #8290A2"></i>
+                        </button>
+                        <div class="btn-group-vertical " role="group" aria-label="Basic example">
+                            <button type="button" class="btn border-0 active-content">
+                                <i class="far fa-comments " style="color: #8290A2"></i>
+                                <span class="badge bg-secondary">9</span>
+                            </button>
+                            <button type="button" class="btn ">
+                                <i class="far fa-folder  " style="color: #8290A2"></i>
+                                <span class="badge bg-secondary">9</span>
+                            </button>
+                            <button type="button" class="btn">
+                                <i class="far fa-comment " style="color: #8290A2"></i>
+                            </button>
+                            <button type="button" class="btn ">
+                                <i class="far fa-star " style="color: #8290A2"></i>
+                            </button>
+                            <button type="button" class="btn ">
+                                <i class="fas fa-sliders-h " style="color: #8290A2"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-9 p-0">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control rounded-3 border-0" placeholder="search"
+                                style="background-color: #322F33;" aria-label="Recipient's username"
+                                aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary border-0" type="button" id="button-addon2">
+                                <i style="color: #8290A2" class="fas fa-lock-open"></i>
+                            </button>
+                        </div>
+                        <ul class="list-group ">
+                            <li class="list-group-item active-content d-flex align-items-center">
+                                <img class="list-img me-2" style="border-radius: 50%;" width="50px" height="50px"
+                                    src="https://i.insider.com/5cdf0a1393a152734e0fc973?width=1021&format=jpeg">
+                                <div class="list-info">
+                                    <h5 class="user-name">John Wick</h5>
+                                    <snap class="date-status">
+                                        <!-- <i class="fal fa-check-double"></i> -->
+                                        8:17 PM
+                                    </snap>
+                                    <span class="last-message">Okay John, I'll call ya</span>
+                                </div> <span class="badge  bg-primary rounded-pill">14</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <img class="list-img me-2" style="border-radius: 50%;" width="50px" height="50px"
+                                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFRUVFRUVFRUVFRUVFxUVFRUWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFw8QFysdHR0rKysrLS0tLS0tLS0tLSstLS0tLS0tLS0tLSsrLTctLS0tLS0tLTcrLSstLS0rNys3Lf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAADAAECBAUGBwj/xAA5EAACAQIEAwYFAgUEAwEAAAAAAQIDEQQSITEFQVEGEyJhcYGRobHB0TJSQmJygvAHFCPxFaLhM//EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMEBf/EAB0RAQEBAQADAQEBAAAAAAAAAAABEQIDEiExQVH/2gAMAwEAAhEDEQA/AMuGyIuJKH6UQcjg9JnHzZGUfNkmyLYEMr/cxmn+5jtkMwDNPqwFWTi0+ujDOQPERuiga21vppv8CSS8/iyvGf4fsTTCDWXn8WSil5/FglImpgFSXT5sm7dPmwKkOpgHio80T8PQAmTzAGWXoiVl0AqSJqQBEl0JWXRAs5LOAVeiFXnaINVCvja1osC3w2fhb6tv7Fq/kithFlhFdEGTAKpeQ+ddAOYTkAXvV0RFzBORHMQGcyLYPMNnAKNoDzjZygmgyBuY2cA0plGcs8rclv5kMRWbeVc9/QPQpqKAOkZ3El4/Zfc0UZ3EX4/ZfckSiU6nhQzqAIT0GcitDuZFzA5yLmAZzIOYJyGzAGzEXIE5iUwBNeJrqPGY1Z2s+hCrPXQIPckmVYzCwqAFuSUgTqHPcW427uFN+svwWTS2RuY7ikKS1evJLcx12lk5bWRz0pNu7bbfNjxidZ445+9dPPj6WqvLy2J0+1MOcZfI5dU29tSUaDfIvpF9q77A8QhVV4u/lzXsXDzyipQd1dNeqZ03BuNJ+Ge/JvZ/E59cY1roEVcU7uMesl8iw5AaSvV9F9TCtG5LMCuPcAmYjci2M5EE8wrg84ykAS4mQzjZyiTYgecZzAI2AxFay8+RGpXS5gKPieZ+wFjDQtrze5ZTApjtgHzmbxJ+P2X3LKmUOIz8XsvuEpr6EHJkoy0GcyqhmfQWZ9BORFyIE5PoNmfQZyGuULvH0FGb6DZiOcgLUd1sDjG+nNCzEM1ncoLGgyapMnCZU4pj1Sj/ADPZCQZvH8a4ru09Xvbkjn0g0YyqSvu2w1SEYaWUmd5Mc7NV4U0+YeGFb2Sfmnt8Db4VwetV/TlgvT8nRYfsW7Jyqa9UkZvkkdJ4q4upQlG6tv8AjQVHC1XpGLt5aX82em4TsxCKSk3K217F5YCEVaMUvZHPryuk8TyLF97SdpxWuwoRzax0fT8dDuO1XCM9OTS1SuvbU4SjdI3x17Rjvj1ro+A8WzLJPlpfp0foaFLEeOTXocrK+k4728S6rmjW4Tik42vqZ6iNl4qQ6xUupXgTRnAZ4iT5kXVl1BibLgm6kv3C7yX7iDaGzDBN1H1Y0pS6kGxrjBJVZCnUfUZyB2zOy9yCVCLk/IuxpEaSsgjqFxNOoIWRDRkPnGGnVJGfxKHj9l9zRUjO4i/H7L7kSoU34U/IhnA4Sr4UmSnEuNJ94RckAlJEHIgstrqQkyu5izlBHIWYE2LMMBsw0tiEWFghgNQqaHM8ZxOebf8AavRc/dmxjp5VZby0X3OcxTvNpdbI6cT+s9X4ucPVo5ub/wA/AsBh3OquetyxCna0eWXfbT/F8y5wmN6kXyf00Q6vxrnn7Hc8Fw6jFG/TsYlCoopF+nXb2ueWV68X2BqoTbBxpSZaQCtTTTXU8u4jhO7qzh0eno9foep1KLW5xHbCilUU+tr+z/DL47lxjyTY53Dp7LRvbyf4FhsQlKz8Mvlfy9SdONr+VmvfUDi4KWq5M7vPW/Qr3QZVTG4TVv4WbCgjNmBpTbGciapIkqSJoCqg7rB+4Q3+2iNRWdclGuGdCJF5VyChuo+Rbw0VErUddfgWL+RUokpi70G2MooJgqqE+8K1xs3kDFvvCljqni9iamU8ZLxexkV1siUMRyYKnLREZK5pR5SB5gSmJsGiXFcHmHuDRLiB5hKRTRVIlGrYCmO2QZXEMbdtrdrTyTK2Ao5pAcTG05Lo7fg1OFUfC5ey+7+P0Ol+Rnme3SxVl4XbeSdvT9K+xa4VpJLovoV8RaEbvyt620S+oPgs3JSy/q2XvsYs+O3Nzp3+D8dvQ6DCYZWORwfD3COapXdNbbXfoupDA4mNWo40aldtZryk3CLcEnJbWuk1p5nGcu16d5HDIFxDEd3HwRzSey/JkcK414lCWttne9+Q/E67csuya0ve1/OwJzWXV4nKUv8Amr06SeiivE3ysrAcfwmjWpy7upmkk3bZ36WNCfZuFaSlNpNRjHSKs8slJNXvZ3S1Vi5/41QnKV3KUtW3zYpP7K80VKzcX5//AEp4mg1KS62kn8fwdd2k4a4TzxW7vb6r4GHiKa8L5Xs/R7HTnpjrhkcNru66pr4HUQ3fscxGhlrNcrnQd9b7munFac0RjMqOsLvSIvxmO5lF1xnWGIs1ativRWZ3ewLPmdizTdloVVhaCzAMwsxEGzkZTBOQzkBPMxOZG490BKMiljZeL2LLnfRIrYyPi9glU6c9B85XVTQi6prAebIxq8mC74jKaYwWcw+Yq0q3ILmGA2YTYHMPmCjKQ9wSY+YDKxVN94/N3XvsalOeVKC5aP7lepG9RPol9SVLdv1+v/QrfExPEwdScYp6W+rs367mp2cwip1st7rR/M5yvXcZXXk/nc6bgdFxy1W1lm9ua6E7+RrjL063H8O7yUXm2aat8fx8DRwnCKUM01FZpNtyfnu7eYsMrpFua8Ohxdq5/ER/5brk0jTrJN/cr8RwclUgoq6td+rZp4/h/gUnJJW1I3E8PJpLT3CSj1Fwuyi4XvZ6PpfkHqRKzWFx2inSl/S2vXlY81oY3vVLS1tV7a/Y9R4hG6a8meS0Gqba55pJ26XaNcufdyxf07yTW9l7c/ugjAYWna8nvJ3t0XIO2dHC3aYdEWKwRMaciE3YeiubCC01YImRHCpZxXGTHTAe44rgqtdLbcqaKpJbkb39Cplb1YeNyC5Ssipj5eL2JxTK2MXi9gVjZtCEpjZiLZ0xk+Ya4h9CtBss0a19wViLQwXUyVynTqBHImC1mHzFVTJqZMB8qvm9vUPSjGSUlz0s/mikqhPvrLQl5b56DxGHi5O7tp0vt0HljJwhlp1JKK5SUfiugCpVW99U9LCx1SLy5ba72Ln+pb/j1DszxDvKMZdUvjz+Z0UGtDzb/TnGq86Lf80fTaVvl8TtHVkm4a35Hn6mXHp4vtzoHarjGSMVF+JtJJb2fkiGGxOJqYdaXle2+ttVo+qZX4XwxtPETh3lSUmoxbSUVFtXNSmq8na+RftUeXqR05ms/CVcTTTbhfS9tddr2sX8HxeVRqM4OEmr2emgRcMlfxTk1/U9fZcjQdNZdlpt5ELirlv8zxniNZd7VyvepJ3/ALpHq3H8ZKnhqko/qUXbyvpf/Oh5LHD2to3rz6edjr4Z/Xn81/IPQxMlZOSfu2zSUjOwdHK8z35eRbznWxwHuJyK7rEe9uTDViKuGigEZk4yGCxFElAHTmWqdVEAu7FawWrWRn4nFckXAsRibaLctUMPpdmdh6Hiuzo4w8KJSKapDqBZk4rdpAljKX7kRShEp42Pi9jXw9WnLZlPidNZ/ZfcyVxDqD5yEiB6a5aMpj94V7j3Jp7D94NnA3FcavsI2OqgK4wp7LEahPvUVByaey13pJVSkOmU9hqyu7oXdS6P4A1IJGrLa79Lv6DDYNgMXOjUjUjpKLv6rmn6nq9LGxqQhVjzSb99Ty/iHCKtKEalT+J2tzWl0n8DvOyc/wDhhGX7VocfLP69Hgv2x2GFrQaura6+4PHpzVoyav0Zh1uH1INzpSutPC9Ho+TIf+WknrCaaav4Htz2Vv8As4u7oMJh+7j+pvTm7g62I/hW7+nUq4upWqQShBq+7l4bK24uHYBw8U5ZptWvyXoRVbjtO9KcesZL5HmLk1o9z1TiK8Lv0OSn2e77CwqR0mlJL+ZKTST+G508Vxx80/HLuqN3wPE4ecP1RlHlqmvmVZyPRjzVaqVh6VSxRUiSqFwaSrko1zNVUd1R6mtX/ckJY23MypV2Rgm2TDWnDGuTsizGNtWUMLZOyNHJclaWISu1Y3aX6UY9NaI1qD0OdWMziNDNUim9A9PgdN73+JHHwlni4q+uofHZ8ng/UDFjC8MhH9N/iVeLO07fyr7lfhOJqxmo1eexa4x/+n9q+rJl1HCNEGTZBnorlURDjHOhDjCJocYQi6EOIRYEOkEw2HlUkoQi5SeySuz0Ds32GUbVMRaUuVP+Ff1dfoag4fAcNq1XalTnP+lO3x2R3vZfseqdqlezqbxjuoevWR19OnZKKSilpZJJfBE40+SK1IyuN8A/3GHnTj+q2aP9S1Xx29zM4UrRhpaySa5q2lmd9hMFbd+y+7MvjHAEnKrSev6pQ+so/g5eSbPjv4epL9Cw7uicFZlLC1VoacGjzPViUnchNWQVWA4iWgHP8er2i0uZ0PDeCShhaUWvEoJtc7vxNfMp8GwsauKWZXUE5281a3zdztZK528XPx5/N19xw8MLHM4zimnpJSV0/ZnFdrOxMoN1MOnKL17vmv6eq8j1Pi2Dv4l+r6r8gaUFUp2e+x2nxwv1891qMou0k4tbpqz+DBntvEOG06qy1acZ8tVqvR7o5PiX+n6k26EnH+WXiXtLc0xY89uK5o8U4HXoN95TaX7lrH4oziMmLGHK5YwrJGp+r+HppFyWxWox1LctEZrpFqm7JGrhHpuYtWo0kzUwNO6u2Yqxegl1DRpoFGgmFpQa2V0RQcVQjdSeluZQ4pNOe62XP1NDHYF1Vlenoc/xHgyhPKm9r6+4ljPTlbkWSsRkeiuRhh2Mc6EIQ4DDiJ0aTlJRim22kkt23skXBA3+z/ZWtiWnbJT/AHyW/wDSuZ2PZbsXGmlOrFTqb66xj5Jc35nb4fCW2RrFYfAezdLDRtCOr/VN6yl78l5G5RpamlGhdWA9zYorSwzcrRXq+S9S3hqSSdt9m/x0RYprTRf55kcNG1/UVrRE8pk8V7Q0YU5ONSEpu8IRTTbm9tOi39jbnTUl6rX3PKe1XC5UH/NTlGUZdY/wv7exz7uOvj5nS5w+E47ts3KFbQz8NNVKcZx2kk/yvZ6Dq6PK92StGWM5EalS6KqgmNJ22JqYt9mp5cXq9JQml5vR2+TO17w8n4o3Kvh4JtPO6ja0aUFe/wAT0zCuThBy3cYt+rSuenxfjx+efdPio3KsKFm5LnuuvmvMtTethqa1OzhVWrh09bakaNJRLtSOo0Kd0EY2OwqlulZnDce7EQqXlSXdy8l4X6rl6o9Oq0bgqmGKj5yx+BnRm4VI5ZL5rqnzRLBbnsnavstDE02tFUT8EujfJ+TPJo4GdKcqdSOWUXZrz/BCfqdDWVi/Uo6lWloy1icTFGLHSLndpwXkW+GGJDGStZbF7hdKX6s25ixqVvxuWadzPpVWgsa7M4rRpXKHFKKc7vovuTp1ZFfGzeb2JiV5tcjJiEei1xMMIRmhxCEWB0j03/Tnszli8TVj4nH/AI0/4Ytfq9X9PUYRoek4XBpK3+bFinRsIQUdQQGcRhANHQTWohFFml0MTtjw3vcPJpXlBN/2/wAS9tH7CEY6nxri5XEdmMRpKm+XiXvpNfGz/uNmdhCPL1H0OL8RQ+UcRlqsnh1LvcfNL+CFOmvJ1JJy/wDVM9UnDkuQ4j1eN4vLfsU5KzHhuIR0calVHobCEETlAU4aDCAC6N7+xw/+pHZvPSeLpLx00u8S/ip9fWN/hcQio8scZNl+GF2EIw6RboUY8zRwqXLYQjFVbW4dVIrcQjCrNKtDqUuJyWfTovqxCIP/2Q==">
+                                <div class="list-info">
+                                    <h5 class="user-name">Jonny</h5>
+                                    <span class="last-message">Okay John, I'll call ya</span>
+                                    <snap class="date-status">
+                                        <!-- <i class="fal fa-check-double"></i> -->
+                                        8:17 PM
+                                    </snap>
+                                </div> <span class="badge  bg-primary rounded-pill">4</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <img class="list-img me-2" style="border-radius: 50%;" width="50px" height="50px"
+                                    src="data:image/jpeg;base64,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">
+                                <div class="list-info">
+                                    <h5 class="user-name">Donald</h5>
+                                    <snap class="date-status">
+                                        <i class="fal fa-check-double"></i>
+                                        8:17 PM
+                                    </snap>
+                                    <span class="last-message">f**k you Donald</span>
+                                </div> <span class="badge  bg-primary rounded-pill"></span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <img class="list-img me-2" style="border-radius: 50%;" width="50px" height="50px"
+                                    src="data:image/jpeg;base64,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">
+                                <div class="list-info">
+                                    <h5 class="user-name">Путин</h5>
+                                    <snap class="date-status">
+                                        <!-- <i class="fal fa-check-double"></i> -->
+                                        8:17 PM
+                                    </snap>
+                                    <span class="last-message">Звонитe мнe </span>
+                                </div> <span class="badge  bg-primary rounded-pill">1</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <img class="list-img me-2" style="border-radius: 50%;" width="50px" height="50px"
+                                    src="data:image/jpeg;base64,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">
+                                <div class="list-info">
+                                    <h5 class="user-name">Elizabeth</h5>
+                                    <snap class="date-status">
+                                        <i class="fal fa-check-double"></i>
+                                        8:17 PM
+                                    </snap>
+                                    <span class="last-message">ok</span>
+                                </div> <span class="badge  bg-primary rounded-pill"></span>
+                            </li>
+
+                            <li class="list-group-item d-flex align-items-center">
+                                <img class="list-img me-2" style="border-radius: 50%;" width="50px" height="50px"
+                                    src="./assets/image/fm.jpg">
+                                <div class="list-info">
+                                    <h5 class="user-name">Frontent materiallar #1</h5>
+                                    <snap class="date-status">
+                                        <i class="fal fa-check-double"></i>
+                                        17:17 PM
+                                    </snap>
+                                    <span class="last-message">ok</span>
+                                </div> <span class="badge  bg-primary rounded-pill"></span>
+                            </li>
+
+                            <li class="list-group-item d-flex align-items-center">
+                                <img class="list-img me-2" style="border-radius: 50%;" width="50px" height="50px"
+                                    src="data:image/jpeg;base64,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">
+                                <div class="list-info">
+                                    <h5 class="user-name">Robert </h5>
+                                    <snap class="date-status">
+                                        <!-- <i class="fal fa-check-double"></i> -->
+                                        7:17 PM
+                                    </snap>
+                                    <span class="last-message">Hey man, howdy?</span>
+                                </div> <span class="badge  bg-primary rounded-pill">1</span>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 p-0 ">
+                <div class="top-panel text-light p-2 d-flex justify-content-between align-items-center"
+                    style="background-color: #202020;">
+                    <p class="name " style="color: #E2E2E2;width: 200px; margin: 0;">
+                        John Whick
+                        <span class="current-session d-block">online</span>
+                    </p>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class=" text-light btn" data-toggle="modal" data-target="#callToUser">
+                            <i class="fas fa-phone-alt"></i>
+                        </button>
+                        <button type="button" class=" text-light btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button type="button" class=" text-light btn">
+                            <i class="fas fa-window-maximize" style="transform: rotate(90deg);"></i>
+                        </button>
+                        <button type="button" class=" text-light btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+
+
+                  
+                </div>
+                <div class="col-12 main-section">
+                    <div class="user-input">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-group mb-3 position-fixed py-1"
+                                    style="width: 68%; bottom: -2%; background: #202020;">
+                                    <span class="input-group-text bg-transparent border-0" style="color: #B1B3BC;"
+                                        role="button" id="basic-addon1"><i class="fas fa-paperclip"></i></span>
+                                    <input type="text" class="text-light form-control border-0 bg-transparent"
+                                        placeholder="Write a message..." aria-label="Username"
+                                        aria-describedby="basic-addon1">
+                                    <button class="btn btn-outline-secondary border-0" type="button"
+                                        id="button-addon2"><i style="color: #B1B3BC; font-size: 20px !important;" class="far fa-smile
+                                         active"></i></button>
+                                    <button class="btn btn-outline-secondary border-0" type="button"
+                                        id="button-addon2"><i style="color: #B1B3BC; font-size: 20px !important;"
+                                            class="far fa-microphone"></i></button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 p-0 position-relative" style="border-left: 0.3px solid #404040;">
+                <div class="top-panel" style="background-color: #202020;">
+                    <div class="btn-group w-100 d-flex justify-content-between align-items-center" role="group"
+                        aria-label="Basic example">
+                        <button style="color:#CCCFD9;padding: 20px;font-size: 14px;" type="button"
+                            class="btn active-btn">EMOJI</button>
+                        <button style="color:#CCCFD9;padding: 20px;font-size: 14px;" type="button"
+                            class="btn ">STICKERS</button>
+                        <button style="color:#CCCFD9;padding: 20px;font-size: 14px;" type="button"
+                            class="btn ">GIFS</button>
+                    </div>
+                </div>
+                <div class="emoji-content overflow-scroll d-flex flex-wrap position-fixed"
+                    style="background-color: #202020; height: 90vh;">
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/grinning-face_1f600.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/grinning-face-with-big-eyes_1f603.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/grinning-face-with-smiling-eyes_1f604.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/beaming-face-with-smiling-eyes_1f601.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/sneezing-face_1f927.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/hot-face_1f975.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-face-with-sunglasses_1f60e.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/disguised-face_1f978.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/nerd-face_1f913.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/woozy-face_1f974.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/exploding-head_1f92f.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/dizzy-face_1f635.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-with-monocle_1f9d0.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/astonished-face_1f632.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/flushed-face_1f633.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-screaming-in-fear_1f631.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/pile-of-poo_1f4a9.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/clown-face_1f921.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-face-with-horns_1f608.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/angry-face-with-horns_1f47f.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/grinning-squinting-face_1f606.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/yawning-face_1f971.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/grinning-cat_1f63a.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/alien_1f47d.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/ghost_1f47b.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-with-symbols-on-mouth_1f92c.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/downcast-face-with-sweat_1f613.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/crying-face_1f622.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-with-steam-from-nose_1f624.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/see-no-evil-monkey_1f648.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/hear-no-evil-monkey_1f649.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/speak-no-evil-monkey_1f64a.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/kiss-mark_1f48b.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/pouting-cat_1f63e.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/kissing-cat_1f63d.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-cat-with-heart-eyes_1f63b.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-with-tears-of-joy_1f602.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/slightly-smiling-face_1f642.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/winking-face_1f609.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-face-with-smiling-eyes_1f60a.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-face-with-halo_1f607.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-face-with-hearts_1f970.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-face-with-heart-eyes_1f60d.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/star-struck_1f929.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-blowing-a-kiss_1f618.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/kissing-face_1f617.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-face_263a-fe0f.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-face_263a-fe0f.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/kissing-face-with-smiling-eyes_1f619.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/money-mouth-face_1f911.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/squinting-face-with-tongue_1f61d.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/squinting-face-with-tongue_1f61d.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/zany-face_1f92a.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/winking-face-with-tongue_1f61c.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-with-tongue_1f61b.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-savoring-food_1f60b.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smiling-face-with-tear_1f972.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-savoring-food_1f60b.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/hugging-face_1f917.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-with-hand-over-mouth_1f92d.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/shushing-face_1f92b.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/thinking-face_1f914.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/zipper-mouth-face_1f910.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-with-raised-eyebrow_1f928.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/neutral-face_1f610.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/lying-face_1f925.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/grimacing-face_1f62c.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-with-rolling-eyes_1f644.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/unamused-face_1f612.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/smirking-face_1f60f.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-without-mouth_1f636.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/expressionless-face_1f611.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/relieved-face_1f60c.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/pensive-face_1f614.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/nauseated-face_1f922.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/face-vomiting_1f92e.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/pinched-fingers_medium-light-skin-tone_1f90c-1f3fc_1f3fc.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/pinched-fingers_1f90c.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/call-me-hand_1f919.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/crossed-fingers_1f91e.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/raised-fist_270a.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/index-pointing-up_261d-fe0f.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/thumbs-up_1f44d.png"
+                            alt="">
+                    </a>
+                    <a href="#" class="emoji">
+                        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/72/apple/271/handshake_1f91d.png"
+                            alt="">
+                    </a>
+                </div>
+                <div class="emoji-nav position-absolute w-100" style="background-color: #202020;bottom: 4%;">
+                    <div class="btn-group d-flex justify-content-between" role="group" aria-label="Basic example">
+                        <button type="button" class="btn p-0">
+                            <i class="far fa-clock"></i>
+                        </button>
+                        <button type="button" class="btn p-0 ">
+                            <i class="far fa-smile active"></i>
+                        </button>
+                        <button type="button" class="btn p-0 ">
+                            <i class="far fa-paw"></i>
+                        </button>
+                        <button type="button" class="btn p-0 ">
+                            <i class="far fa-apple-alt"></i>
+                        </button>
+                        <button type="button" class="btn p-0 ">
+                            <i class="far fa-baseball-ball"></i>
+                        </button>
+                        <button type="button" class="btn p-0 ">
+                            <i class="far fa-car"></i>
+                        </button>
+                        <button type="button" class="btn p-0 ">
+                            <i class="far fa-lightbulb"></i>
+                        </button>
+                        <button type="button" class="btn p-0 me-3">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- end of main -->
+
+    <!-- beginning of footer -->
+    <footer class="footer">
+
+    </footer>
+    <!-- end of main -->
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"
+        integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA=="
+        crossorigin="anonymous"></script>
+    <script src="./assets/libs/bootstrap-5.0.0-beta1-dist/js/bootstrap.min.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>
