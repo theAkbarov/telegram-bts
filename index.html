@@ -199,9 +199,87 @@
             right: 0;
             margin: auto;
         }
+
+        .side-bar__main.opened {
+            transform: translateY(100px);
+        }
+
+        .lock-btn {
+            width: 42px;
+            height: 36px;
+            outline: none;
+            transition: all ease 0.5s;
+        }
+
+        .lock-btn:hover {
+            background: transparent;
+        }
+
+        
+        .lock-screen {
+            width: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background: #1A1A1A;
+            transition: all ease 0.4s;
+            height: 100vh;
+            color: #CDD1DA;
+            z-index: 999999995555555555555555555559;
+        }
+        .lock-screen.locked-screen {
+            width: 100vw;
+        }
+        .lock-screen main{
+            padding-top: 15%;
+        }
+        .lock-screen main input{
+            border-bottom: 2px solid white !important;
+            outline: none !important;
+        }
+        .lock-screen main input:focus{
+            border-bottom: 2px solid blue !important
+        }
+        .lock-screen main label{
+            font-size: 14px;
+            transition: all ease 0.5s;
+        }
+        .lock-screen main label.go-up{
+                transform: translate(-4px,-22px);
+        }
     </style>
+
 </head>
 <div class="overlay"></div>
+<div class="lock-screen">
+    <header class="header py-2 " style="background-color: #3A3A3A; width: 100vw;">
+        <div class="row g-0">
+            <div class="col-7  offset-5 d-flex justify-content-between align-items-center">
+                <p style="width: 25%;text-align: center;margin: 0;" class="text-white">Telegram</p>
+                <div class="btn-group px-3 " role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-warning rounded-circle"></button>
+                    <button type="button" class="btn mx-2 btn-success rounded-circle"></button>
+                    <button type="button" class="btn btn-danger rounded-circle"></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="text-center ">
+        <h6 class="h5 d-block mb-4">Enter your local password</h6>
+        <form action="" class="psw-form ">
+            <label for="password" class="label psw-label position-absolute  ">
+                your password
+            </label>
+            <input type="password" required class="bg-transparent mb-3 psw-input border-0" id='password'>
+            <br>
+            <button class="btn btn-secondary bg-transparent border-0 text-white fw-bold">Submit</button>
+            <br>
+            <button class="btn text-white" style="font-size: 14px;">log out</button>
+        </form>
+
+    </main>
+</div>
 <div class="side-menu position-absolute h-100">
     <div class="side-bar__header p-3" style="max-height: 190px;
     padding-top: 50px !important;">
@@ -217,7 +295,7 @@
         </div>
         <div class="header-bottom">
             <button
-                class="btn btn-primary bg-transparent d-flex justify-content-between align-items-center border-0 w-100 "
+                class="btn btn-primary side-bar-btn bg-transparent d-flex justify-content-between align-items-center border-0 w-100 "
                 type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
                 aria-controls="collapseExample">
                 <p class="" style="
@@ -265,6 +343,35 @@
             </div>
         </div>
     </div>
+    <div class="side-bar__main">
+        <ul class="list-group bg-transparent">
+            <li class="list-group-item bg-transparent">
+                <i class="far fa-users"></i>
+                <span>New Group</span>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <i class="far fa-bullhorn"></i>
+                <span>New Channel</span>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <i class="far fa-user"></i>
+                <span>Contacts</span>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <i class="far fa-phone-alt"></i>
+                <span>Calls</span>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <i class="fal fa-2x fa-cog"></i>
+                <span>Settings</span>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <i class="far fa-moon"></i>
+                <span>Night Mode</span>
+            </li>
+
+        </ul>
+    </div>
 </div>
 
 <body style="font-family: sans-serif; overflow: hidden;">
@@ -287,21 +394,23 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div style="background:#3A3A3A" class="modal-header border-0 d-flex justify-content-end py-1">
-                     <div class="btn-group px-3" role="group" aria-label="Basic mixed styles example">
-                         <button type="button" class="btn btn-warning rounded-circle"></button>
-                         <button type="button" class="btn mx-2 btn-success rounded-circle"></button>
-                         <button type="button" class="  btn btn-danger rounded-circle" data-bs-dismiss="modal"
-                             aria-label="Close"></button>
-                     </div>
+                    <div class="btn-group px-3" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn btn-warning rounded-circle"></button>
+                        <button type="button" class="btn mx-2 btn-success rounded-circle"></button>
+                        <button type="button" class="  btn btn-danger rounded-circle" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
                 </div>
                 <div class="modal-body py-5" style="background: #212428;">
-                    <img style="width: 100px;height: 100px;border-radius:50%;object-fit: cover;" src="https://i.insider.com/5cdf0a1393a152734e0fc973?width=1021&format=jpeg" alt=""
+                    <img style="width: 100px;height: 100px;border-radius:50%;object-fit: cover;"
+                        src="https://i.insider.com/5cdf0a1393a152734e0fc973?width=1021&format=jpeg" alt=""
                         class="d-block mx-auto my-4">
-                        <h4 class="d-block text-center text-light">John Wick</h4>
-                        <p class="text-center text-muted" style="font-size: 14px;">calling...</p>
+                    <h4 class="d-block text-center text-light">John Wick</h4>
+                    <p class="text-center text-muted" style="font-size: 14px;">calling...</p>
                 </div>
                 <div class="modal-footer border-0 justify-content-center" style="background-color: #212428;">
-                    <button type="button" class="btn btn-light rounded-circle p-4 d-flex justify-content-center align-items-center">
+                    <button type="button"
+                        class="btn btn-light rounded-circle p-4 d-flex justify-content-center align-items-center">
                         <i class="fas fa-video-slash"></i>
                     </button>
                     <button type="button" data-bs-dismiss="modal" aria-label="Close"
@@ -309,7 +418,8 @@
                         <i class="fas fa-phone-alt"></i>
                     </button>
                     <button type="button"
-                        class="btn btn-dark rounded-circle p-3 p-4 d-flex justify-content-center align-items-center" style="background-color: #3a3a3a !important;">
+                        class="btn btn-dark rounded-circle p-3 p-4 d-flex justify-content-center align-items-center"
+                        style="background-color: #3a3a3a !important;">
                         <i class="fas fa-microphone"></i>
                     </button>
                 </div>
@@ -350,8 +460,9 @@
                             <input type="text" class="form-control rounded-3 border-0" placeholder="search"
                                 style="background-color: #322F33;" aria-label="Recipient's username"
                                 aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary border-0" type="button" id="button-addon2">
-                                <i style="color: #8290A2" class="fas fa-lock-open"></i>
+                            <button class="btn lock-btn btn-outline-secondary border-0" type="button"
+                                id="button-addon2">
+                                <i style="color: #8290A2" class="lock-icon fas fa-lock-open"></i>
                             </button>
                         </div>
                         <ul class="list-group ">
@@ -631,10 +742,23 @@
                         <button type="button" class=" text-light btn">
                             <i class="fas fa-window-maximize" style="transform: rotate(90deg);"></i>
                         </button>
-                        <button type="button" class=" text-light btn">
+                        <button type="button" class=" text-light btn" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-ellipsis-v"></i>
                         </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+
+
                     </div>
+
 
 
 
@@ -646,7 +770,17 @@
                                 <div class="input-group mb-3 position-fixed py-1"
                                     style="width: 68%; bottom: -2%; background: #202020;">
                                     <span class="input-group-text bg-transparent border-0" style="color: #B1B3BC;"
-                                        role="button" id="basic-addon1"><i class="fas fa-paperclip"></i></span>
+                                        role="button" id="basic-addon1">
+
+
+
+                                        <label for="formFile" class="form-label m-0">
+                                            <i class="fas fa-paperclip"></i>
+
+                                        </label>
+                                        <input class="form-control d-none" type="file" id="formFile">
+
+                                    </span>
                                     <input type="text" class="text-light form-control border-0 bg-transparent"
                                         placeholder="Write a message..." aria-label="Username"
                                         aria-describedby="basic-addon1">
