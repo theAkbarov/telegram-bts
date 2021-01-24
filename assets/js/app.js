@@ -27,4 +27,7 @@ $(document).ready(function () {
         $('.lock-icon').addClass('fa-lock-open');
         $('.lock-icon').removeClass('fa-lock');
     })
+    $('.delete-btn').click(function () {
+        $('body').remove();
+    })
 })
